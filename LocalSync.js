@@ -1,4 +1,3 @@
-
 // shim for Object.watch - directly from Eli Grey's gist (revision 5) at https://gist.github.com/eligrey/384583
 if (!Object.prototype.watch) {
   Object.defineProperty(Object.prototype, "watch", {
@@ -42,10 +41,7 @@ Storage.prototype.setData = function(key, value) {
 // utility method to read any value (object, array, string, number, etc) from local storage
 Storage.prototype.getData = function(key) {
     var rawValue = this.getItem(key);
-    if (rawValue.indexOf('{') === 0 || rawValue.indexOf('[') === 0) {
-        return JSON.parse(rawValue);
-    } 
-    return null;
+    return rawValue && ((rawValue.indexOf('{') === 0 || rawValue.indexOf('[') === 0) ? JSON.parse(rawValue) : rawValue);
 }
 
 // add the localSync() method to the Object prototype
