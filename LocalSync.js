@@ -13,9 +13,8 @@ if (!Object.prototype.watch) {
 			}
 			, setter = function (val) {
 				oldval = newval;
-                return newval = handler.call(this, prop, oldval, val);
-			}
-			;
+                		return newval = handler.call(this, prop, oldval, val);
+			};
 			
 			if (delete this[prop]) { // can't watch constants
 				Object.defineProperty(this, prop, {
@@ -54,9 +53,3 @@ if (!Object.prototype.localSync) {
         });
     };
 }
-
-// TODO
-// provide Object.unwatch
-// provide way to turn off the sync
-// test the getData/setData utility methods
-
