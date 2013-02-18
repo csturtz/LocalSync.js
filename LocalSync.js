@@ -14,7 +14,8 @@ if (!Object.prototype.watch) {
 			, setter = function (val) {
 				oldval = newval;
                 		return newval = handler.call(this, prop, oldval, val);
-			};
+			}
+			;
 			
 			if (delete this[prop]) { // can't watch constants
 				Object.defineProperty(this, prop, {
