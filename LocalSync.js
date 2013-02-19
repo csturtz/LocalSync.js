@@ -1,3 +1,9 @@
+// LocalSync.js v0.1
+
+// (c) 2013 Chad Sturtz
+// Licensed under The MIT License
+// http://opensource.org/licenses/MIT
+
 // shim for Object.watch - directly from Eli Grey's gist (revision 5) at https://gist.github.com/eligrey/384583
 if (!Object.prototype.watch) {
   Object.defineProperty(Object.prototype, "watch", {
